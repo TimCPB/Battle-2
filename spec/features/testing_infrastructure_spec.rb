@@ -15,7 +15,7 @@ end
 feature "Player 2 has hit points" do
   scenario "Shows hit points" do
     sign_in_and_play
-    expect(page).to have_content('HP = 100')
+    expect(page).to have_content('HP = 60')
   end
 end
 
@@ -25,5 +25,11 @@ feature 'player 1 can hit player 2' do
     click_on("attack")
     expect(page).to have_content('Player 2 has been hit')
   end
+  scenario 'reduces Player 2 HP' do
+    sign_in_and_play
+    click_on("attack")
+    expect(page).to have_content('HP = 50')
+  end
 end
 
+feature ''
