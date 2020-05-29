@@ -21,5 +21,9 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
+  post "/attack" do
+    "Player 2 has been hit"
+  end
+
   run! if app_file == $0
 end

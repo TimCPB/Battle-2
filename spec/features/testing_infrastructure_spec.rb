@@ -21,6 +21,9 @@ end
 
 feature 'player 1 can hit player 2' do
   scenario 'confirms hit' do
-
+    sign_in_and_play
+    click_on("attack")
+    expect(page).to have_content('Player 2 has been hit')
   end
 end
+
